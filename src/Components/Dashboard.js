@@ -2,6 +2,8 @@ import React from 'react'
 import Navbar from './Navbar.js'
 import LandingPage from './LandingPage.js';
 import DietHack from './DietHack.js';
+import Recommend from './Recommend.js';
+import Footer from './Footer.js';
 
 const Dashboard = () => {
     return (
@@ -14,8 +16,10 @@ const Dashboard = () => {
             <DietHack />
             {/* more features */}
             {/* Quiz-what is the right meal for you */}
+            <Recommend />
             {/* readmore and signup  */}
             {/* Footer */}
+            <Footer />
         </div>
     )
 }
