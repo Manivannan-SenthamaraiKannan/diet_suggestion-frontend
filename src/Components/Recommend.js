@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Recommend = () => {
+    const navigate = useNavigate();
+
     return (
         <div className='col-lg-12 col-md-6 ' style={{ paddingTop: "2rem", paddingBottom: "3rem" }}>
             <div className='row' style={{ display: "flex", alignItems: "center", justifyContent: "center", alignSelf: 'auto', background: "#FAFAF5", width: "80" }}>
@@ -17,7 +20,8 @@ const Recommend = () => {
                             color: "whitesmoke",
                             borderColor: "27C391",
                             borderRadius: "2rem"
-                        }}>Take the Quiz</button>
+                        }}
+                            onClick={() => { navigate('/quiz') }}>Take the Quiz</button>
                     </div>
                 </div>
             </div>

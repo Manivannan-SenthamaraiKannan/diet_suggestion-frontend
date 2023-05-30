@@ -15,12 +15,9 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/features" style={{ color: "black", fontSize: "large" }}>Features</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to='/articles' style={{ color: "black", fontSize: "large" }}>Articles</Link>
-              </li>
             </ul>
-            <ul className="navbar-nav   mb-2 mb-lg-0">
-              <li className='nav-item'>
+            <ul className="navbar-nav  mb-2 mb-lg-0">
+              <li className='nav-item' style={{ paddingRight: "1.5rem" }}>
                 <button type="button" className='btn btn-secondary'>Login</button>
               </li>
               <li className='nav-item'>

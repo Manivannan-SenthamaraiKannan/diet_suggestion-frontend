@@ -4,6 +4,7 @@ import LandingPage from './LandingPage.js';
 import DietHack from './DietHack.js';
 import Recommend from './Recommend.js';
 import Footer from './Footer.js';
+import Quiz from './Quiz.js';
 
 const Dashboard = () => {
     return (
