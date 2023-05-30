@@ -128,7 +128,6 @@ const Quiz = () => {
                 {(BMIData <= 16 && BMIData >= 18.5) && <SevereThiness />}
                 {(BMIData >= 18.5 && BMIData <= 25) && <Normal />}
                 {(BMIData >= 25 && BMIData <= 40) && <Obese />}
-
             </div>
         </>
 
