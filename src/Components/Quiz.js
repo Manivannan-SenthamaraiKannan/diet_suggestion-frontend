@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar';
+import SevereThiness from '../Components/DietPlan/SevereThiness'
+import Normal from '../Components/DietPlan/Normal'
+import Obese from '../Components/DietPlan/Obese'
 
 const Quiz = () => {
 
@@ -122,32 +125,10 @@ const Quiz = () => {
                 <h4 className='text-left'>
                     Your Recommended Diet are :
                 </h4>
+                {(BMIData <= 16 && BMIData >= 18.5) && <SevereThiness />}
+                {(BMIData >= 18.5 && BMIData <= 25) && <Normal />}
+                {(BMIData >= 25 && BMIData <= 40) && <Obese />}
 
-                <div className='diets'>
-                    <button type='button' className='btn btn-outline-secondary'>Ketogenic</button>
-                    <button type='button' className='btn btn-outline-secondary'>Mediterranean</button>
-                    <button type='button' className='btn btn-outline-secondary'>Intermittent</button>
-                    <button type='button' className='btn btn-outline-secondary'>Low-Carbohydrate</button>
-                    <button type='button' className='btn btn-outline-secondary'>Plant-Based</button>
-                    <button type='button' className='btn btn-outline-secondary'>Veganism</button>
-                    <button type='button' className='btn btn-outline-secondary'>Gluten-free</button>
-                    <button type='button' className='btn btn-outline-secondary'>Low-Fat</button>
-                    <button type='button' className='btn btn-outline-secondary'>Raw-Food</button>
-                    <button type='button' className='btn btn-outline-secondary'>Paleolithic</button>
-                    <button type='button' className='btn btn-outline-secondary'>Weight Watchers</button>
-                    <button type='button' className='btn btn-outline-secondary'>Very low-calorie</button>
-                    <button type='button' className='btn btn-outline-secondary'>South-Beach</button>
-                    <button type='button' className='btn btn-outline-secondary'>Atkins</button>
-                    <button type='button' className='btn btn-outline-secondary'>Vegetearian</button>
-                    <button type='button' className='btn btn-outline-secondary'>Dukan</button>
-                    <button type='button' className='btn btn-outline-secondary'>Carnivore</button>
-                    <button type='button' className='btn btn-outline-secondary'>NutriSystem</button>
-                    <button type='button' className='btn btn-outline-secondary'>Alkaline</button>
-                    <button type='button' className='btn btn-outline-secondary'>Whole30</button>
-                    <button type='button' className='btn btn-outline-secondary'>Zone</button>
-                    <button type='button' className='btn btn-outline-secondary'>Diabetic</button>
-                    <button type='button' className='btn btn-outline-secondary'>Slim-Fast</button>
-                </div>
             </div>
         </>
 

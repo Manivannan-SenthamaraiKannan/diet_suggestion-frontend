@@ -10,12 +10,12 @@ const LandingPage = () => {
                             <h1>Healthy Living.</h1>
                             <h1>Simplified.</h1>
                             <h4>The digital self-care app that helps you,<br /> recommend your Diet by measuring <br />your BMI.</h4>
-                            <div className='button'>
+                            {/* <div className='button'>
                                 <button type="button" className='btn btn-light'
                                     style={{ borderRadius: "2rem", border: "1px solid black", paddingLeft: "2rem", paddingRight: "2rem" }}>Read More</button>
                                 <button type="button" className='btn btn-light'
                                     style={{ borderRadius: "2rem", border: "1px solid black", paddingLeft: "2rem", paddingRight: "2rem" }}>Sign up</button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className='col-md-6' >
