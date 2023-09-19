@@ -13,7 +13,7 @@ const FoodPlan = (props) => {
     }, [])
 
 
-    const endpointAPI = 'https://diet-suggestion-backend-ixup.onrender.com'
+    const endpointAPI = 'https://diet-suggestion-backend-0oso.onrender.com'
     // axios get call
     const getDiet = () => {
         axios.get(`${endpointAPI}/keto`)
@@ -41,9 +41,9 @@ const FoodPlan = (props) => {
                     diet.forEach((element) => {
                         // for (let i = 0; i < element.hints.length; i++) {
                         // }
-                        element.hints.map(()=>{
-                            
-                        })
+                        // element.hints.map(()=>{
+
+                        // })
                     })
                 } */}
             </div>
