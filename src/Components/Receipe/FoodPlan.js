@@ -37,7 +37,7 @@ const FoodPlan = (props) => {
                         {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
                     </div>
                 </div>
-                {
+                {/* {
                     diet.forEach((element) => {
                         // for (let i = 0; i < element.hints.length; i++) {
                         // }
@@ -45,7 +45,7 @@ const FoodPlan = (props) => {
                             
                         })
                     })
-                }
+                } */}
             </div>
             <Footer />
         </div >

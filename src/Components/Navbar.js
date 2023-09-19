@@ -1,4 +1,5 @@
 import React from 'react'
+import 'bootstrap/js/src/dropdown'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
@@ -16,14 +17,22 @@ const Navbar = () => {
                 <Link className="nav-link" to="/features" style={{ color: "black", fontSize: "large" }}>Features</Link>
               </li>
             </ul>
-            {/* <ul className="navbar-nav  mb-2 mb-lg-0">
+            <ul className="navbar-nav  mb-2 mb-lg-0">
               <li className='nav-item' style={{ paddingRight: "1.5rem" }}>
-                <button type="button" className='btn btn-secondary'>Login</button>
+                <button type="button" className='btn btn-light'><i className="bi bi-box-arrow-in-right"></i> Login</button>
               </li>
-              <li className='nav-item'>
-                <button type="button" className='btn btn-info'>Sign up</button>
-              </li>
-            </ul> */}
+              <div class="dropdown">
+                <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i className="bi bi-person-fill"></i> Profile
+                </button>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href="#!">My Account</a></li>
+                  <li><a className="dropdown-item" href="#!">Subscription</a></li>
+                  <li><a className="dropdown-item" href="#!">Extra</a></li>
+                  <li><a className="dropdown-item" href="#!">LogOut</a></li>
+                </ul>
+              </div>
+            </ul>
           </div>
         </div>
       </nav>
