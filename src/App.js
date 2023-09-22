@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './Components/Dashboard'
 import Quiz from './Components/Quiz';
+import Features from './Components/Features';
 import FoodPlan from './Components/Receipe/FoodPlan';
 
 
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Dashboard />} />
           <Route path='/quiz' element={<Quiz />} />
+          <Route path='/features' element={<Features />} />
           <Route path='/foodplan' element={<FoodPlan />} />
         </Routes>
       </div>
