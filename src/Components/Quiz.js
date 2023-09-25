@@ -36,9 +36,9 @@ const Quiz = () => {
                                 <label className="col-form-label">Age</label>
                             </div>
                             <div className="col-auto">
-                                <input type="text" className="form-control" aria-labelledby="passwordHelpInline" />
+                                <input type="number" className="form-control" />
                             </div>
-                            <div className='col-auto'>
+                            {/* <div className='col-auto'>
                                 <div className="form-check form-check-inline">
                                     <input className="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
                                     <label className="form-check-label" for="inlineCheckbox1">Male</label>
@@ -47,27 +47,28 @@ const Quiz = () => {
                                     <input className="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
                                     <label className="form-check-label" for="inlineCheckbox2">Female</label>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className='row g-3 align-items-center py-2'>
                             <div className="col-auto">
                                 <label className="col-form-label">Height</label>
                             </div>
                             <div className="col-auto">
-                                <input type="text" className="form-control" onChange={(e) => { handleInput({ height: e.target.value }) }} />
+                                <input type="number" className="form-control" placeholder='(in cms)'
+                                    onChange={(e) => { handleInput({ height: e.target.value }) }} />
                             </div>
                             <div className="col-auto">
                                 <label className="col-form-label">Weight</label>
                             </div>
                             <div className="col-auto">
-                                <input type="text" className="form-control" placeholder='(in cms)'
+                                <input type="number" className="form-control" placeholder='(in kgs)'
                                     onChange={(e) => { handleInput({ weight: e.target.value }) }} />
                             </div>
                         </div>
-                        <div className='text-center'>
+                        <div className='text-center' style={{ paddingTop: "1.5rem" }}>
                             <button type='button' className='btn btn-primary' onClick={submit}>Submit</button>
                         </div>
-                        <h4 className='text-left py-3'>Your Calculated BMI : {result}</h4>
+                        <h4 className='text-left py-4'>Your Calculated BMI : {result}</h4>
                     </div>
 
                     <div className='col-md-6'>
@@ -121,14 +122,15 @@ const Quiz = () => {
             </div>
 
             {/* Diet Recommendation */}
-            <div className='container py-3'>
-                <h4 className='text-left'>
-                    Your Recommended Diet are :
-                </h4>
-                {(BMIData <= 16 && BMIData >= 18.5) && <SevereThiness />}
-                {(BMIData >= 18.5 && BMIData <= 25) && <Normal />}
-                {(BMIData >= 25 && BMIData <= 40) && <Obese />}
-            </div>
+            {BMIData ?
+                (<div className='container'>
+                    <h4 className='text-left' style={{ paddingBottom: "1rem", paddingTop: "1rem" }}>
+                        Your Recommended Diets are :
+                    </h4>
+                    {(BMIData <= 16 && BMIData >= 18.5) && <SevereThiness />}
+                    {(BMIData >= 18.5 && BMIData <= 25) && <Normal />}
+                    {(BMIData >= 25 && BMIData <= 40) && <Obese />}
+                </div >) : ""}
         </>
 
     )
