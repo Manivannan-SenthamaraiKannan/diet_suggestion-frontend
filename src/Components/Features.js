@@ -20,9 +20,9 @@ const Features = () => {
                     <p style={{ fontSize: "2rem", lineHeight: "2.5rem" }}>Learn about nutrition from Lifesum’s in-house<br /> nutritionists and invited experts.</p>
                 </div>
 
-                <div className='py-3'>
+                <div className='py-5'>
                     {/* Features Page Menu Content goes below */}
-
+                    <div className='text-center' style={{fontSize:"2rem",fontWeight:"bold"}}>Latest Stories</div>
                 </div>
             </div>
             {/* End of features Page */}
