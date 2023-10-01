@@ -1,10 +1,29 @@
 import Navbar from '../Navbar'
 import Footer from '../Footer'
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-const FoodPlan = (props) => {
+const FoodPlan = ({ dietPlan }) => {
+    console.log(dietPlan)
     const navigate = useNavigate();
-    
+    const [data, setData] = useState();
+    const endpointAPI = 'https://diet-suggestion-backend-0oso.onrender.com';
+
+    useEffect(() => {
+        receipeData();
+    })
+
+    const receipeData = () => {
+        axios.get(`${endpointAPI}/${dietPlan}`)
+            .then((res) => setData(res.data))
+            .catch((err) => console.error(err))
+    }
+
+    console.log(data)
+
+
     return (
         <div>
             <Navbar />

@@ -1,33 +1,26 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
-import axios from 'axios';
+import FoodPlan from '../Receipe/FoodPlan'
 
 const Normal = () => {
 
     const navigate = useNavigate();
-    const [diet, setDiet] = useState([]);
-    const endpointAPI = 'https://diet-suggestion-backend-0oso.onrender.com'
-
-    const foodReceipe = (text) => {
-        setDiet(foodReceipe);
-        axios.get(`${endpointAPI}/${diet}`)
-            .then((res) => setDiet(res.data))
-            .catch((err) => console.error(err))
-        navigate('/foodplan')
-    }
-    console.log(diet)
+    const [dietPlan, setDietPlan] = useState();
+    const [flag, setFlag] = useState(false);
+    console.log(dietPlan)
 
     return (
         <div className='diets'>
-            <button type='button' className='btn btn-outline-secondary' onClick={() => foodReceipe('keto')}>Ketogenic</button>
-            <button type='button' className='btn btn-outline-secondary' onClick={() => foodReceipe('carbohydrate')}>Low-Carbohydrate</button>
-            <button type='button' className='btn btn-outline-secondary' onClick={() => foodReceipe('plant')}>Plant-Based</button>
-            <button type='button' className='btn btn-outline-secondary' onClick={() => foodReceipe('vegan')}>Veganism</button>
-            <button type='button' className='btn btn-outline-secondary' onClick={() => foodReceipe('zone')}>Zone</button>
-            <button type='button' className='btn btn-outline-secondary' onClick={() => foodReceipe('diabetic')}>Diabetic</button>
-            <button type='button' className='btn btn-outline-secondary' onClick={() => foodReceipe('vegetearian')}>Vegetearian</button>
-            <button type='button' className='btn btn-outline-secondary' onClick={() => foodReceipe('dukan')}>Dukan</button>
+            <button type='button' className='btn btn-outline-secondary' onClick={() => { setDietPlan('keto'); setFlag(true); navigate('/foodPlan') }}>Ketogenic</button>
+            <button type='button' className='btn btn-outline-secondary' onClick={() => setDietPlan('carbohydrate')}>Low-Carbohydrate</button>
+            <button type='button' className='btn btn-outline-secondary' onClick={() => setDietPlan('plant')}>Plant-Based</button>
+            <button type='button' className='btn btn-outline-secondary' onClick={() => setDietPlan('vegan')}>Veganism</button>
+            <button type='button' className='btn btn-outline-secondary' onClick={() => setDietPlan('zone')}>Zone</button>
+            <button type='button' className='btn btn-outline-secondary' onClick={() => setDietPlan('diabetic')}>Diabetic</button>
+            <button type='button' className='btn btn-outline-secondary' onClick={() => setDietPlan('vegetearian')}>Vegetearian</button>
+            <button type='button' className='btn btn-outline-secondary' onClick={() => setDietPlan('dukan')}>Dukan</button>
+            {flag && <FoodPlan receipe={dietPlan} />}
         </div>
     )
 }

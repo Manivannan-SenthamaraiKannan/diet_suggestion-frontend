@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar.js'
+import Navbar from './Navbar.js';
 import Footer from './Footer.js';
 
 const Features = () => {
@@ -17,7 +17,7 @@ const Features = () => {
                 </div>
                 <div className='bg-BgSub px-16 pb-80 pt-48 text-center lg:pb-128 lg:pt-72'>
                     <h1 className="type-large-fat" style={{ color: "#42cd8c" }}>Nutrition Explained</h1>
-                    <p style={{ fontSize: "2rem", lineHeight: "2.5rem" }}>Learn about nutrition from Lifesum’s in-house<br /> nutritionists and invited experts.</p>
+                    <p style={{ fontSize: "2rem", lineHeight: "2.5rem" }}>Learn about nutrition from Diet Suggestion in-house<br /> nutritionists and invited experts.</p>
                 </div>
 
                 <div className='py-5'>
