@@ -18,14 +18,14 @@ const Navbar = () => {
               </li>
             </ul>
             <ul className="navbar-nav  mb-2 mb-lg-0">
-              <div class="dropdown">
-                <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div className="dropdown">
+                <button className="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ background: "#42cd8c", color: "white" }}>
                   <i className="bi bi-person-circle"></i> Profile
                 </button>
                 <ul className="dropdown-menu">
                   <li><a className="dropdown-item" href="#!">My Account</a></li>
-                  <li><a className="dropdown-item" href="#!">Subscription</a></li>
-                  <li><a className="dropdown-item" href="#!">Extra</a></li>
+                  <li><Link className="dropdown-item" to="/features">Features</Link></li>
+                  <li><Link className="dropdown-item" to="/receipe">My Receipes</Link></li>
                   <li><hr className="dropdown-divider" /></li>
                   <li><a className="dropdown-item" href="#!">LogOut</a></li>
                 </ul>

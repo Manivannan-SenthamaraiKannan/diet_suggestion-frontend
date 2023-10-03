@@ -4,6 +4,7 @@ import Dashboard from './Components/Dashboard'
 import Quiz from './Components/Quiz';
 import Features from './Components/Features';
 import FoodPlan from './Components/Receipe/FoodPlan';
+import Recipe from './Pages/Recipe';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route exact path='/' element={<Dashboard />} />
           <Route path='/quiz' element={<Quiz />} />
           <Route path='/features' element={<Features />} />
+          <Route path='/receipe' element={<Recipe />} />
           <Route path='/foodplan' element={<FoodPlan />} />
         </Routes>
       </div>
