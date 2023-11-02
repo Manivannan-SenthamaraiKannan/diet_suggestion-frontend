@@ -1,8 +1,11 @@
 import React from 'react'
 import 'bootstrap/js/src/dropdown'
 import { Link } from 'react-router-dom'
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
+  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -22,13 +25,22 @@ const Navbar = () => {
                 <button className="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ background: "#42cd8c", color: "white" }}>
                   <i className="bi bi-person-circle"></i> Profile
                 </button>
-                <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="#!">My Account</a></li>
-                  <li><Link className="dropdown-item" to="/features">Features</Link></li>
-                  <li><Link className="dropdown-item" to="/receipe">My Receipes</Link></li>
-                  <li><hr className="dropdown-divider" /></li>
-                  <li><a className="dropdown-item" href="#!">LogOut</a></li>
-                </ul>
+                {isAuthenticated ? (
+                  <ul className="dropdown-menu">
+                    <li><Link className="dropdown-item" to="/features">Features</Link></li>
+                    <li><Link className="dropdown-item" to="/receipe">My Receipes</Link></li>
+                    <li><hr className="dropdown-divider" /></li>
+                    <li><p className="dropdown-item" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>LogOut</p></li>
+                  </ul>
+                ) : (
+                  <ul className="dropdown-menu">
+                    {/* <li><Link className="dropdown-item" to="/features">Features</Link></li>
+                    <li><Link className="dropdown-item" to="/receipe">My Receipes</Link></li>
+                    <li><hr className="dropdown-divider" /></li> */}
+                    <li><p className="dropdown-item" onClick={() => loginWithRedirect()} >LogIn</p></li>
+                  </ul>
+                )
+                }
               </div>
             </ul>
           </div>
