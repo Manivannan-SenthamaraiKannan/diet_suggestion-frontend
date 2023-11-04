@@ -6,11 +6,10 @@ import Features from './Components/Features';
 import FoodPlan from './Components/Receipe/FoodPlan';
 import Recipe from './Pages/Recipe';
 import {useAuth0} from "@auth0/auth0-react";
-import {useState} from "react";
 
 function App() {
     const {isAuthenticated} = useAuth0();
-    const [dietPlant, setDietPlan] = useState()
+
     return (
         <Router>
             <div className="App">
@@ -19,7 +18,7 @@ function App() {
                     <Route path='/quiz' element={<Quiz/>}/>
                     {isAuthenticated ? (<Route path='/features' element={<Features/>}/>) : ""}
                     {isAuthenticated ? (<Route path='/receipe' element={<Recipe/>}/>) : ""}
-                    {isAuthenticated ? (<Route path='/foodplan' element={<FoodPlan setDietPlan={setDietPlan}/>}/>) : ""}
+                    {isAuthenticated ? (<Route path='/foodplan' element={<FoodPlan/>}/>) : ""}
                 </Routes>
             </div>
         </Router>
