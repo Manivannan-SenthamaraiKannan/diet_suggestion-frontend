@@ -1,41 +1,87 @@
-import React, {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
-import FoodPlan from '../Receipe/FoodPlan'
+import React from 'react'
+import {Link} from 'react-router-dom'
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
-const Normal = () => {
-    const navigate = useNavigate();
-    const [dietPlan, setDietPlan] = useState();
-    const [flag, setFlag] = useState(false);
-    console.log(dietPlan)
+const Normal = ({setDiet}) => {
+
+    const setDietName = (diet) => {
+        setDiet(diet)
+    }
 
     return (
-        <div className='diets'>
-            <button type='button' className='btn btn-outline-secondary' onClick={() => {
-                setDietPlan('keto');
-                setFlag(true);
-                navigate('/foodPlan')
-            }}>Ketogenic
-            </button>
-            <button type='button' className='btn btn-outline-secondary'
-                    onClick={() => setDietPlan('carbohydrate')}>Low-Carbohydrate
-            </button>
-            <button type='button' className='btn btn-outline-secondary'
-                    onClick={() => setDietPlan('plant')}>Plant-Based
-            </button>
-            <button type='button' className='btn btn-outline-secondary' onClick={() => setDietPlan('vegan')}>Veganism
-            </button>
-            <button type='button' className='btn btn-outline-secondary' onClick={() => setDietPlan('zone')}>Zone
-            </button>
-            <button type='button' className='btn btn-outline-secondary'
-                    onClick={() => setDietPlan('diabetic')}>Diabetic
-            </button>
-            <button type='button' className='btn btn-outline-secondary'
-                    onClick={() => setDietPlan('vegetearian')}>Vegetearian
-            </button>
-            <button type='button' className='btn btn-outline-secondary' onClick={() => setDietPlan('dukan')}>Dukan
-            </button>
-            {flag && <FoodPlan receipe={dietPlan}/>}
-        </div>
+        <>
+            <Navbar/>
+            <div className="container py-3">
+                <div className='diets'>
+                    <div className="card" style={{width: "18rem"}}>
+                        <div className="card-body">
+                            <h5 className="card-title">Keto</h5>
+                            <Link to='/keto' className="btn btn-primary"
+                                  onClick={() => setDietName("keto")}
+                                  style={{background: "#42cd8c"}}>Get Recipe</Link>
+                        </div>
+                    </div>
+
+                    <div className="card" style={{width: "18rem"}}>
+                        <div className="card-body">
+                            <h5 className="card-title">Low Carbohydrate</h5>
+                            <Link to='/carbohydrate' className="btn btn-primary"
+                                  onClick={() => setDietName("carbohydrate")}
+                                  style={{background: "#42cd8c"}}
+                            >Get Recipe</Link>
+                        </div>
+                    </div>
+
+                    <div className="card" style={{width: "18rem"}}>
+                        <div className="card-body">
+                            <h5 className="card-title">Plant-Based</h5>
+                            <Link to="/plant" className="btn btn-primary"
+                                  onClick={() => setDietName("plant")}
+                                  style={{background: "#42cd8c"}}>Get Recipe</Link>
+                        </div>
+                    </div>
+
+                    <div className="card" style={{width: "18rem"}}>
+                        <div className="card-body">
+                            <h5 className="card-title">Vegan</h5>
+                            <Link to="/vegan" className="btn btn-primary"
+                                  onClick={() => setDietName("vegan")}
+                                  style={{background: "#42cd8c"}}>Get Recipe</Link>
+                        </div>
+                    </div>
+
+                    <div className="card" style={{width: "18rem"}}>
+                        <div className="card-body">
+                            <h5 className="card-title">Zone</h5>
+                            <Link to="/zone" className="btn btn-primary"
+                                  onClick={() => setDietName("zone")}
+                                  style={{background: "#42cd8c"}}>Get Recipe</Link>
+                        </div>
+                    </div>
+
+                    <div className="card" style={{width: "18rem"}}>
+                        <div className="card-body">
+                            <h5 className="card-title">Diabetic</h5>
+                            <Link to="/diabetic" className="btn btn-primary"
+                                  onClick={() => setDietName("diabetic")}
+                                  style={{background: "#42cd8c"}}>Get Recipe</Link>
+                        </div>
+                    </div>
+
+                    <div className="card" style={{width: "18rem"}}>
+                        <div className="card-body">
+                            <h5 className="card-title">Dukan</h5>
+                            <Link to="/dukan" className="btn btn-primary"
+                                  onClick={() => setDietName("dukan")}
+                                  style={{background: "#42cd8c"}}>Get Recipe</Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <Footer/>
+        </>
     )
 }
 

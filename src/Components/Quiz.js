@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 import Navbar from './Navbar';
-import SevereThiness from '../Components/DietPlan/SevereThiness'
-import Normal from '../Components/DietPlan/Normal'
-import Obese from '../Components/DietPlan/Obese'
+import {useNavigate} from "react-router-dom";
+
 
 const Quiz = () => {
 
     const [BMI, setBMI] = useState();
     const [result, setResult] = useState();
+    const navigate = useNavigate()
 
     const handleInput = (value) => {
         return setBMI((detail) => {
@@ -122,10 +122,19 @@ const Quiz = () => {
                     <h4 className='text-left' style={{paddingBottom: "1rem", paddingTop: "1rem"}}>
                         Your Recommended Diets are :
                     </h4>
-                    {(BMIData <= 16 && BMIData >= 18.5) && <SevereThiness/>}
-                    {(BMIData >= 18.5 && BMIData <= 25) && <Normal/>}
-                    {(BMIData >= 25 && BMIData <= 40) && <Obese/>}
-                </div>) : ""}
+
+                    {(BMIData >= 16 && BMIData <= 18.5) &&
+                        <button type="button" className="btn btn-light"
+                                onClick={() => navigate("/severethinness")}>Severe Thinness</button>}
+                    {(BMIData >= 18.5 && BMIData <= 25) &&
+                        <button type="button" className="btn btn-light"
+                                onClick={() => navigate("/normal")}>Normal</button>}
+                    {(BMIData >= 25 && BMIData <= 40) &&
+                        <button type="button" className="btn btn-light"
+                                onClick={() =>navigate("/obese")}>Obese</button>}
+
+                </div>) : ""
+            }
         </>
 
     )

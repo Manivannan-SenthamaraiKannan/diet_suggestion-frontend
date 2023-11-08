@@ -1,0 +1,1 @@
+export const APIENDPOINT = "https://diet-suggestion-backend-0oso.onrender.com"

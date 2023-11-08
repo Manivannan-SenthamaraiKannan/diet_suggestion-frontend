@@ -14,10 +14,8 @@ const Dashboard = () => {
             <LandingPage />
             {/* What is DietHack*/}
             <DietHack />
-            {/* more features */}
-            {/* Quiz-what is the right meal for you */}
+            {/* Quiz-what is the right diet for you */}
             <Recommend />
-            {/* readmore and signup  */}
             {/* Footer */}
             <Footer />
         </div>

@@ -8,7 +8,7 @@ const Recipe = () => {
   return (
     <>
       <Navbar />
-      {/* Receipe Page content Starts */}
+      {/* Recipe Page content Starts */}
       <div className='py-5 container'>
         <button className=' d-flex align-items-center justify-content-center btn btn-light' onClick={() => navigate('/')}>
           <i className="bi bi-arrow-left" style={{ fontSize: "1rem" }}></i> Back to Home</button>
