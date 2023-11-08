@@ -19,17 +19,17 @@ import Dukan from "./Components/Recipe/Dukan"
 import Alkaline from "./Components/Recipe/Alkaline";
 import Atkins from "./Components/Recipe/Atkins";
 import Carnivore from "./Components/Recipe/Carnivore";
-import Diet_Togo from "./Components/Recipe/Diet_Togo";
+import DietTogo from "./Components/Recipe/dietTogo";
 import Flexitarian from "./Components/Recipe/Flexitarian";
-import Gluten_Free from "./Components/Recipe/Gluten_Free";
-import Low_Calorie from "./Components/Recipe/Low_Calorie";
-import Low_Fat from "./Components/Recipe/Low_fat";
+import GlutenFree from "./Components/Recipe/glutenFree";
+import lowCalories from "./Components/Recipe/lowCalories";
+import LowFat from "./Components/Recipe/lowFat";
 import Macrobiotic from "./Components/Recipe/Macrobiotic";
 import Mediterranean from "./Components/Recipe/Mediterranean";
 import NutriSystem from "./Components/Recipe/NutriSystem";
 import Paleolithic from "./Components/Recipe/Paleolithic";
 import Pescetarianism from "./Components/Recipe/Pescetarianism";
-import Raw_Food from "./Components/Recipe/Raw_Food";
+import RawFood from "./Components/Recipe/rawFood";
 import SlimFast from "./Components/Recipe/SlimFast";
 import SouthBeach from "./Components/Recipe/SouthBeach";
 import Vegetarianism from "./Components/Recipe/Vegetarianism";
@@ -64,19 +64,19 @@ function App() {
                     {isAuthenticated ? (
                         <Route path='/diabetic' element={<Diabetic dietPlan={dietPlan}/>}/>) : ""}
                     {isAuthenticated ? (
-                        <Route path='/diettogo' element={<Diet_Togo dietPlan={dietPlan}/>}/>) : ""}
+                        <Route path='/diettogo' element={<DietTogo dietPlan={dietPlan}/>}/>) : ""}
                     {isAuthenticated ? (
                         <Route path='/dukan' element={<Dukan dietPlan={dietPlan}/>}/>) : ""}
                     {isAuthenticated ? (
                         <Route path='/flexitarian' element={<Flexitarian dietPlan={dietPlan}/>}/>) : ""}
                     {isAuthenticated ? (
-                        <Route path='/gluten' element={<Gluten_Free dietPlan={dietPlan}/>}/>) : ""}
+                        <Route path='/gluten' element={<GlutenFree dietPlan={dietPlan}/>}/>) : ""}
                     {isAuthenticated ? (
                         <Route path='/keto' element={<Keto dietPlan={dietPlan}/>}/>) : ""}
                     {isAuthenticated ? (
-                        <Route path='/lowcalorie' element={<Low_Calorie dietPlan={dietPlan}/>}/>) : ""}
+                        <Route path='/lowcalorie' element={<lowCalories dietPlan={dietPlan}/>}/>) : ""}
                     {isAuthenticated ? (
-                        <Route path='/lowfat' element={<Low_Fat dietPlan={dietPlan}/>}/>) : ""}
+                        <Route path='/lowfat' element={<LowFat dietPlan={dietPlan}/>}/>) : ""}
                     {isAuthenticated ? (
                         <Route path='/macrobiotic' element={<Macrobiotic dietPlan={dietPlan}/>}/>) : ""}
                     {isAuthenticated ? (
@@ -90,7 +90,7 @@ function App() {
                     {isAuthenticated ? (
                         <Route path='/plantbased' element={<PlantBased dietPlan={dietPlan}/>}/>) : ""}
                     {isAuthenticated ? (
-                        <Route path='/rawfood' element={<Raw_Food dietPlan={dietPlan}/>}/>) : ""}
+                        <Route path='/rawfood' element={<RawFood dietPlan={dietPlan}/>}/>) : ""}
                     {isAuthenticated ? (
                         <Route path='/slimfast' element={<SlimFast dietPlan={dietPlan}/>}/>) : ""}
                     {isAuthenticated ? (

@@ -8,7 +8,7 @@ const onSale = {
     top: '0.5rem',
     right: '0.5rem'
 }
-const Diet_Togo = ({dietPlan}) => {
+const GlutenFree = ({dietPlan}) => {
 
     const [dietData, setDietData] = useState([]);
 
@@ -24,7 +24,7 @@ const Diet_Togo = ({dietPlan}) => {
         <>
             <Navbar/>
             <div className="container py-3">
-                <h3>Diet-To-Go Diet Recipe</h3>
+                <h3>Gluten-Free Diet Recipe.</h3>
                 <div className="diets">
                     {
                         dietData.map((dietDatum, key) => (
@@ -34,7 +34,7 @@ const Diet_Togo = ({dietPlan}) => {
                                              style={{width: "18rem"}}>
                                             <div className="card-body">
                                                 <div className="badge bg-dark text-white position-absolute"
-                                                     style={onSale}>Diet-To-GO
+                                                     style={onSale}>Gluten-Free
                                                 </div>
                                                 <h5 className="card-text" style={{height: "6rem", textAlign: "justify"}}>
                                                     {data.food.label}
@@ -73,4 +73,4 @@ const Diet_Togo = ({dietPlan}) => {
     )
 }
 
-export default Diet_Togo
+export default GlutenFree;

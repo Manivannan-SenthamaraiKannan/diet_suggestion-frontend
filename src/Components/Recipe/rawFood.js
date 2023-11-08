@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import 'bootstrap/js/src/modal'
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import {APIENDPOINT} from "../../Global";
@@ -9,7 +8,8 @@ const onSale = {
     top: '0.5rem',
     right: '0.5rem'
 }
-const Low_Fat = ({dietPlan}) => {
+
+const RawFood = ({dietPlan}) => {
 
     const [dietData, setDietData] = useState([]);
 
@@ -25,7 +25,7 @@ const Low_Fat = ({dietPlan}) => {
         <>
             <Navbar/>
             <div className="container py-3">
-                <h3>Low_Fat Diet Recipe</h3>
+                <h3>Raw_Food Diet Recipe</h3>
                 <div className="diets">
                     {
                         dietData.map((dietDatum, key) => (
@@ -35,7 +35,7 @@ const Low_Fat = ({dietPlan}) => {
                                              style={{width: "18rem"}}>
                                             <div className="card-body">
                                                 <div className="badge bg-dark text-white position-absolute"
-                                                     style={onSale}>Low-Fat
+                                                     style={onSale}>Raw_Food
                                                 </div>
                                                 <h5 className="card-text" style={{height: "6rem", textAlign: "justify"}}>
                                                     {data.food.label}
@@ -74,4 +74,4 @@ const Low_Fat = ({dietPlan}) => {
     )
 }
 
-export default Low_Fat;
+export default RawFood

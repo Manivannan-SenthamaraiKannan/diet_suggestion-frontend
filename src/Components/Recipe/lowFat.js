@@ -9,7 +9,7 @@ const onSale = {
     top: '0.5rem',
     right: '0.5rem'
 }
-const Low_Calorie = ({dietPlan}) => {
+const LowFat = ({dietPlan}) => {
 
     const [dietData, setDietData] = useState([]);
 
@@ -25,7 +25,7 @@ const Low_Calorie = ({dietPlan}) => {
         <>
             <Navbar/>
             <div className="container py-3">
-                <h3>Low_Calorie Diet Recipe</h3>
+                <h3>Low_Fat Diet Recipe</h3>
                 <div className="diets">
                     {
                         dietData.map((dietDatum, key) => (
@@ -35,7 +35,7 @@ const Low_Calorie = ({dietPlan}) => {
                                              style={{width: "18rem"}}>
                                             <div className="card-body">
                                                 <div className="badge bg-dark text-white position-absolute"
-                                                     style={onSale}>Low-Calorie
+                                                     style={onSale}>Low-Fat
                                                 </div>
                                                 <h5 className="card-text" style={{height: "6rem", textAlign: "justify"}}>
                                                     {data.food.label}
@@ -74,4 +74,4 @@ const Low_Calorie = ({dietPlan}) => {
     )
 }
 
-export default Low_Calorie;
+export default LowFat;
