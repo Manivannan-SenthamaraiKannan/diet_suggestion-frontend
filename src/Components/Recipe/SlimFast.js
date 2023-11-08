@@ -19,7 +19,7 @@ const SlimFast = ({dietPlan}) => {
                 setDietData(res.data)
             })
             .catch(err => console.log(err))
-    }, [])
+    })
 
     return (
         <>
